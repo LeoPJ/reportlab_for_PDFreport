@@ -19,23 +19,23 @@ story = []
 
 
 # 文本基础信息
-No='ADBD2020R_20200510114927451857977090'
-text_title='在线课程视频观看行为分析'
-author='廖培杰'
+No='ADBD2020R_20201015114927451857977090'
+text_title='项目书1'
+author='某某某'
 
-check_list=['中国学术期刊网络出版总库','中国博士学位论文全文数据库/中国优秀硕士学位论文全文数据库','中国重要会议论文全文数据库','英文数据库(涵盖期刊、博硕、会议的英文数据以及德国Springer、英国Taylor&Francis 期刊数据库等)','图书资源']
-check_list_text=''
-for i in range(0,len(check_list)-1):
-	check_list_text+=check_list[i]+'\n'
-check_list_text+=check_list[-1]
+# ~ check_list=['中国学术期刊网络出版总库','中国博士学位论文全文数据库/中国优秀硕士学位论文全文数据库','中国重要会议论文全文数据库','英文数据库(涵盖期刊、博硕、会议的英文数据以及德国Springer、英国Taylor&Francis 期刊数据库等)','图书资源']
+# ~ check_list_text=''
+# ~ for i in range(0,len(check_list)-1):
+	# ~ check_list_text+=check_list[i]+'\n'
+# ~ check_list_text+=check_list[-1]
 
-duration='1900-01-01至'+str(time.strftime("%Y-%m-%d", time.localtime()))
+# ~ duration='1900-01-01至'+str(time.strftime("%Y-%m-%d", time.localtime()))
 
 table_data_1 = [['No:'+No,'','','','检测时间：'+str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())),'','',''],
               ['检测文献：',text_title],
-              ['作者：',author],
-              ['检测范围：',check_list_text],
-              ['时间范围：',duration]
+              ['项目申请人：',author],
+              # ~ ['检测范围：',check_list_text],
+              # ~ ['时间范围：',duration]
               ]
 table_style_1 = [
     ('SPAN',(0,0),(3,0)),#第一行的合并
@@ -47,8 +47,8 @@ table_style_1 = [
     
     ('SPAN',(1,1),(-1,1)),#后面信息的合并
     ('SPAN',(1,2),(-1,2)),
-    ('SPAN',(1,3),(-1,3)),
-    ('SPAN',(1,4),(-1,4)),
+    # ~ ('SPAN',(1,3),(-1,3)),
+    # ~ ('SPAN',(1,4),(-1,4)),
     
     ('TEXTCOLOR',(0,1),(0,-1),colors.HexColor('#006400')),#设置第二行后第一列字体颜色
     ('ALIGN',(0,1),(0,-1),'RIGHT'),  #第二行后第一列居右
@@ -69,7 +69,7 @@ table1 = Table(data=table_data_1, style=table_style_1, colWidths=60)
 f=open("字典数据.txt",'r')
 result=eval(f.read())
 result_dict={}
-for i in range(0,3):
+for i in range(1,2):
 	result_dict['项目书'+str(i+1)]=result
 
 
